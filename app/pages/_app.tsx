@@ -9,17 +9,25 @@ import {
 } from "blitz"
 import LoginForm from "app/auth/components/LoginForm"
 
+import { Provider as StyletronProvider } from "styletron-react";
+import { styletron, debug } from "utils/styletron";
+import { LightTheme, BaseProvider } from "baseui";
+
 export default function App({ Component, pageProps }: AppProps) {
   const getLayout = Component.getLayout || ((page) => page)
 
   return (
-    <ErrorBoundary
-      FallbackComponent={RootErrorFallback}
-      onReset={useQueryErrorResetBoundary().reset}
-    >
-      {getLayout(<Component {...pageProps} />)}
-    </ErrorBoundary>
-  )
+    <StyletronProvider value={styletron} debug={debug} debugAfterHydration>
+      <BaseProvider theme={LightTheme}>
+        <ErrorBoundary
+          FallbackComponent={RootErrorFallback}
+          onReset={useQueryErrorResetBoundary().reset}
+        >
+          {getLayout(<Component {...pageProps} />)}
+        </ErrorBoundary>
+      </BaseProvider>
+    </StyletronProvider>
+  );
 }
 
 function RootErrorFallback({ error, resetErrorBoundary }: ErrorFallbackProps) {

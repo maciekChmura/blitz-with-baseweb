@@ -1,5 +1,6 @@
 import { forwardRef, PropsWithoutRef } from "react"
 import { useFormContext } from "react-hook-form"
+import { StatefulInput } from "baseui/input"
 
 export interface LabeledTextFieldProps extends PropsWithoutRef<JSX.IntrinsicElements["input"]> {
   /** Field name. */
@@ -25,7 +26,7 @@ export const LabeledTextField = forwardRef<HTMLInputElement, LabeledTextFieldPro
       <div {...outerProps}>
         <label>
           {label}
-          <input disabled={isSubmitting} {...register(name)} {...props} />
+          <StatefulInput disabled={isSubmitting} {...register(name)} {...props} />
         </label>
 
         {error && (

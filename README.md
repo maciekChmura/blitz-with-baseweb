@@ -2,7 +2,7 @@
 
 This is a [Blitz.js](https://github.com/blitz-js/blitz) app.
 
-# **blitz-with-baseweb2**
+# **blitz-with-baseweb**
 
 ## Quick start
 

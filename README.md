@@ -4,6 +4,26 @@ This is a [Blitz.js](https://github.com/blitz-js/blitz) app.
 
 # **blitz-with-baseweb2**
 
+## Quick start
+
+```
+npm i
+```
+
+add `.env.local` file with content:
+
+```
+DATABASE_URL="file:./db.sqlite"
+```
+
+```
+blitz prisma migrate dev
+```
+
+```
+npm run dev
+```
+
 ## Getting Started
 
 Run your app in the development mode.

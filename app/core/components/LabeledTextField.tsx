@@ -26,7 +26,8 @@ export const LabeledTextField = forwardRef<HTMLInputElement, LabeledTextFieldPro
       <div {...outerProps}>
         <label>
           {label}
-          <StatefulInput disabled={isSubmitting} {...register(name)} {...props} />
+          <input disabled={isSubmitting} {...register(name)} {...props} />
+          {/* <StatefulInput disabled={isSubmitting} {...register(name)} {...props} /> */}
         </label>
 
         {error && (
